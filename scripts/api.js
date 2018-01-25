@@ -26,32 +26,34 @@ const api = function () {
   };
 
 
-//   const updateItem = (id, updateData, callback)=> {
+  const updateBookmark = (id, updateData, callback)=> {
 
-//     $.ajax({
-//       url:`${BASE_URL}/items/${id}`,
-//       method:'PATCH',
-//       contentType:'application/json',
-//       data:JSON.stringify(updateData),
-//       success:callback
-//     });
-//   };
+    $.ajax({
+      url:`${BASE_URL}/bookmarks/${id}`,
+      method:'PATCH',
+      contentType:'application/json',
+      data:JSON.stringify(updateData),
+      success:callback
+    });
+  };
 
 
-//   const deleteItem = (id, callback)=> {
+  const deleteBookmark = (id, callback)=> {
 
-//     $.ajax({
-//       url:`${BASE_URL}/items/${id}`,
-//       method:'DELETE',
-//       // contentType:'application/json',
-//       success:callback
-//     });
-//   };
+    $.ajax({
+      url:`${BASE_URL}/bookmarks/${id}`,
+      method:'DELETE',
+      // contentType and data are NA bc object is empty
+      success:callback
+    });
+  };
 
 
   return {
     getBookmarks,
-    createBookmark
+    createBookmark,
+    updateBookmark,
+    deleteBookmark
   };
 
 }();
