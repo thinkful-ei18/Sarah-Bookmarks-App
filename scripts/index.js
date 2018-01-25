@@ -2,11 +2,22 @@
 /*Global api, store*/
 
 //Only access the exposed methods from bookmarks-list
-// $(document).ready(function() {
-//   (something I write like bookmarksList).bindEventListeners();
-//   (something I write like bookmarksList.render();
-// });
+$(document).ready(function() {
+  //bookmarksList.bindEventListeners();
+  bookmarksList.render();
+});
 
+//Need this on index for initial getdata 
+
+$.getJSON('https://thinkful-list-api.herokuapp.com/sarah/bookmarks', (response) => {
+  console.log('api response: ', response);
+  response.forEach(bookmark => {
+    store.addBookmark(bookmark);
+  });
+  // response.forEach(store.addBookmark); troubleshoot 'this' later
+    bookmarksList.render();
+  console.log(store);
+});
 
 //tests
 
@@ -33,6 +44,3 @@
 //   });
 // });
 
-$.getJSON('https://thinkful-list-api.herokuapp.com/sarah/bookmarks', (response) => {
-  console.log('api response: ', response);
-});
