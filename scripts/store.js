@@ -20,12 +20,17 @@
     return store.bookmarks.find(bookmark => bookmark.id === id);
   };
 
+  //Let's add a NEW bookmark
+
+
   return {
     bookmarks: [],
+    adding: false,
     // minRating: null,
 
     findByID,
-    addBookmark
+    addBookmark,
+    //addNewBookmark
   };
 
 })();
