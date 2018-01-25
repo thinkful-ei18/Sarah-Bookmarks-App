@@ -1,5 +1,3 @@
-function helloWorld() {
-  return 'Hello World!'
-};
-
-console.log(helloWorld());
+$.getJSON('https://thinkful-list-api.herokuapp.com/sarah/bookmarks', (response) => {
+  console.log('api response: ', response);
+});
